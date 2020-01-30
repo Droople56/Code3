@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class playerUnit : MonoBehaviour
 {
+    enum PlayerClass : ushort
+    {
+        FIREFIGHTER = 1,
+        PARAMEDIC = 2,
+        POLICE_OFFICER = 3
+
+    }
     //Attributes
     Vector3 unitPos;
     Vector3 forward;
