@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Firefighter : PlayerUnit
+public class Paramedic : PlayerUnit
 {
     // Start is called before the first frame update
     void Start()
