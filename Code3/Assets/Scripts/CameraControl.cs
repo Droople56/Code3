@@ -6,38 +6,45 @@ public class CameraControl : MonoBehaviour
 {
     //Attributes
     Vector3 position;
+    //this will be forward not relative to the camera, but to the map
     Vector3 forward;
 
     // Start is called before the first frame update
     void Start()
     {
-        position = this.transform.position;
-        //forward = 
+        position = gameObject.transform.position;
+        //gameObject.transform.position
+        forward = Quaternion.Euler(-30, 0, 0) * gameObject.transform.forward;
     }
 
     // Update is called once per frame
     void Update()
     {
         Movement();
+        gameObject.transform.position = position;
     }
 
     void Movement()
     {
-        if (Input.GetButtonDown("w"))
+        //forward
+        if (Input.GetKey(KeyCode.W))
         {
             position += forward;
         }
-        else if (Input.GetButtonDown("A"))
+        //left
+        else if (Input.GetKey(KeyCode.A))
         {
-
+            position -= (Quaternion.Euler(0,90,0) * forward);
         }
-        else if (Input.GetButtonDown("S"))
+        //backwards
+        else if (Input.GetKey(KeyCode.S))
         {
-
+            position -= forward;
         }
-        else if (Input.GetButtonDown("D"))
+        //right
+        else if (Input.GetKey(KeyCode.D))
         {
-
+            position += (Quaternion.Euler(0, 90, 0) * forward);
         }
     }
 
