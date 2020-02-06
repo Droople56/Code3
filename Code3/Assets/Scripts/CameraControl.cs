@@ -19,9 +19,6 @@ public class CameraControl : MonoBehaviour
         //gameObject.transform.position
         forward = Quaternion.Euler(-30, 0, 0) * gameObject.transform.forward;
         up = Quaternion.Euler(0, 0, 90) * forward;
-
-        camLocalEuler.x = 30;
-        gameObject.transform.localEulerAngles = camLocalEuler;
     }
 
     // Update is called once per frame
@@ -72,14 +69,12 @@ public class CameraControl : MonoBehaviour
         if (Input.GetKey(KeyCode.Q))
         {
             forward = (Quaternion.Euler(0, -3, 0) * forward).normalized;
-            gameObject.transform.forward = forward;
-            gameObject.transform.Rotate(30, 0, 0);
         }
         else if (Input.GetKey(KeyCode.E))
         {
             forward = (Quaternion.Euler(0, 3, 0) * forward).normalized;
-            gameObject.transform.forward = forward;
-            gameObject.transform.Rotate(30, 0, 0);
         }
+        gameObject.transform.forward = forward;
+        gameObject.transform.Rotate(30, 0, 0);
     }
 }
