@@ -19,10 +19,11 @@ public class PlayerUnit : MonoBehaviour
     //int identifiers for class type 1 = Firefighter / 2 = Paramedic / 3 = Police Officer
     int unitClass;
 
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        unitPos = transform.position;
     }
 
     // Update is called once per frame
@@ -30,4 +31,19 @@ public class PlayerUnit : MonoBehaviour
     {
         
     }
+
+    public void FixUnitPosition()
+    {
+        unitPos = transform.position;
+    }
+
+    public void MoveUnit(Vector3 destination)
+    {
+        transform.LookAt(destination);
+        
+        transform.position = Vector3.Lerp(unitPos, destination, 5.0f);
+
+    }
+
+
 }

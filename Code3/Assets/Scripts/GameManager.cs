@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
+    [SerializeField]
     private GameObject selectedObject;
+    [SerializeField]
     private GameObject prevSelectedObject;
 
     // Start is called before the first frame update
@@ -18,9 +19,29 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
             GetObjectClicked();
+            Debug.Log("Click");
+        }
+        if (Input.GetMouseButtonDown(1) && selectedObject != null)
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit, 1000.0f))
+            {
+                if (hit.transform.gameObject.GetComponent<TerrainCollider>() != null)
+                {
+
+                    selectedObject.transform.GetComponent<PlayerUnit>().FixUnitPosition();
+                    selectedObject.transform.GetComponent<PlayerUnit>().MoveUnit(hit.point);
+
+                }
+                else
+                {
+                    Debug.Log("INVALID LOCATION");
+                }
+            }
         }
     }
 
@@ -30,22 +51,22 @@ public class GameManager : MonoBehaviour
     {
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, 100.0f))
+        if (Physics.Raycast(ray, out hit, 1000.0f))
         {
-            //If it is the same game object, don't do anything
-            if (selectedObject == hit.transform.gameObject)
+            if (hit.transform.gameObject.GetComponent<TerrainCollider>() != null)
             {
-                return;
+                selectedObject = null;
             }
-            if (selectedObject != null)
+            else if (selectedObject != null)
             {
                 prevSelectedObject = selectedObject;
+                selectedObject = hit.transform.gameObject;
             }
-
-
-
-
-            selectedObject = hit.transform.gameObject;
+            else if(selectedObject == null)
+            {
+                selectedObject = hit.transform.gameObject;
+            }
+            
         }
     }
 
