@@ -33,8 +33,10 @@ public class GameManager : MonoBehaviour
                 if (hit.transform.gameObject.GetComponent<TerrainCollider>() != null)
                 {
 
-                    selectedObject.transform.GetComponent<PlayerUnit>().FixUnitPosition();
-                    selectedObject.transform.GetComponent<PlayerUnit>().MoveUnit(hit.point);
+                   
+                   
+                    Vector3 dest = new Vector3(hit.point.x, selectedObject.transform.position.y, hit.point.z);
+                    selectedObject.transform.GetComponent<PlayerUnit>().MoveUnit(dest);
 
                 }
                 else
