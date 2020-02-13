@@ -28,7 +28,7 @@ public class FireManager : MonoBehaviour
 
     void StartFire()
     {
-        var newFire = Instantiate(firePrefab, new Vector3(0,0,0), Quaternion.identity);
+        var newFire = Instantiate(firePrefab, this.transform.position, Quaternion.identity);
         fires.Add(newFire);
     }
 
