@@ -5,13 +5,16 @@ using UnityEngine;
 
 public class FireManager : MonoBehaviour
 {
-    public float instantiationTimer = 1f;
+    [SerializeField]
+    private float instantiationTimer = 1f;
     private float radius = 1f;
 
-    public GameObject firePrefab;
+    [SerializeField]
+    private GameObject firePrefab;
     private List<GameObject> fires;
 
-    public LayerMask fireLayer;
+    [SerializeField]
+    private LayerMask fireLayer;
 
     // Start is called before the first frame update
     void Start()
