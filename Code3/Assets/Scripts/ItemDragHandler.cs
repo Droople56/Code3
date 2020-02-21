@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
 {
     Vector3 origin;
+    RectTransform cell;
 
     public void OnDrag(PointerEventData eventData)
     {
@@ -14,15 +15,23 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        gameObject.transform.localPosition = origin;
+        RectTransform cell = transform as RectTransform;
+        if(RectTransformUtility.RectangleContainsScreenPoint(cell, Input.mousePosition))
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            gameObject.transform.localPosition = origin;
+        }
     }
 
     // Start is called before the first frame update
     void Start()
     {
         origin = transform.localPosition;
-        Debug.Log(origin);
-        Debug.Log(transform.localPosition);
+        cell = transform.GetComponentInParent<RectTransform>();
+        Debug.Log(cell);
     }
 
     // Update is called once per frame
