@@ -17,8 +17,7 @@ public class PlayerUnit : MonoBehaviour
     Vector3 forward;
     int health;
     float speed;
-    //int identifiers for class type 1 = Firefighter / 2 = Paramedic / 3 = Police Officer
-    int unitClass;
+    List<GameObject> inventory;
 
     private NavMeshAgent agent;
 
