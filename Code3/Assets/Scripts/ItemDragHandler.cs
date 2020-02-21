@@ -14,13 +14,13 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        gameObject.transform.position = origin;
+        gameObject.transform.localPosition = origin;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        origin = transform.position;
+        origin = transform.localPosition;
         Debug.Log(origin);
         Debug.Log(transform.localPosition);
     }
