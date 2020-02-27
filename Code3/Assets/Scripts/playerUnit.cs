@@ -50,5 +50,11 @@ public class PlayerUnit : MonoBehaviour
 
     }
 
+    public void InteractWithVehicle(GameObject vehicle)
+    {
+        Debug.Log("Interact with " + vehicle.name);
+
+    }
+
 
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8709948447234437079}
   m_Layer: 0
   m_Name: SpreadingFire
-  m_TagString: Untagged
+  m_TagString: Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

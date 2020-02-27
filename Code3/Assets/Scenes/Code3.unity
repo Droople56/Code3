@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2383,7 +2383,7 @@ GameObject:
   - component: {fileID: 889138494}
   m_Layer: 0
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4463,6 +4463,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1923351863}
     m_Modifications:
+    - target: {fileID: -8860640645801629582, guid: 5fabbbdf8a75342408d94154d7f4c847,
+        type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
+    - target: {fileID: -8785875635863032519, guid: 5fabbbdf8a75342408d94154d7f4c847,
+        type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
+    - target: {fileID: -8602628105607675585, guid: 5fabbbdf8a75342408d94154d7f4c847,
+        type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
+    - target: {fileID: -7548094512187315170, guid: 5fabbbdf8a75342408d94154d7f4c847,
+        type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
+    - target: {fileID: -7131633609172109084, guid: 5fabbbdf8a75342408d94154d7f4c847,
+        type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
+    - target: {fileID: -6994944901276188049, guid: 5fabbbdf8a75342408d94154d7f4c847,
+        type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
+    - target: {fileID: -6279625544560907202, guid: 5fabbbdf8a75342408d94154d7f4c847,
+        type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
+    - target: {fileID: -5503451281093428120, guid: 5fabbbdf8a75342408d94154d7f4c847,
+        type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5fabbbdf8a75342408d94154d7f4c847,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4533,10 +4573,115 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 100.00006
       objectReference: {fileID: 0}
+    - target: {fileID: -3183607924781274173, guid: 5fabbbdf8a75342408d94154d7f4c847,
+        type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
+    - target: {fileID: -2478836721756207306, guid: 5fabbbdf8a75342408d94154d7f4c847,
+        type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
+    - target: {fileID: -2419861865565640870, guid: 5fabbbdf8a75342408d94154d7f4c847,
+        type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
+    - target: {fileID: -1000958392418868757, guid: 5fabbbdf8a75342408d94154d7f4c847,
+        type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 5fabbbdf8a75342408d94154d7f4c847,
         type: 3}
       propertyPath: m_Name
       value: firetruck2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 5fabbbdf8a75342408d94154d7f4c847,
+        type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
+    - target: {fileID: -581385311868541306, guid: 5fabbbdf8a75342408d94154d7f4c847,
+        type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
+    - target: {fileID: -74081841568555639, guid: 5fabbbdf8a75342408d94154d7f4c847,
+        type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
+    - target: {fileID: 605794221237293913, guid: 5fabbbdf8a75342408d94154d7f4c847,
+        type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534723774959745546, guid: 5fabbbdf8a75342408d94154d7f4c847,
+        type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
+    - target: {fileID: 2768410582594111970, guid: 5fabbbdf8a75342408d94154d7f4c847,
+        type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
+    - target: {fileID: 2999027991056805387, guid: 5fabbbdf8a75342408d94154d7f4c847,
+        type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180332076287212682, guid: 5fabbbdf8a75342408d94154d7f4c847,
+        type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3985590776855094375, guid: 5fabbbdf8a75342408d94154d7f4c847,
+        type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4566521555037917182, guid: 5fabbbdf8a75342408d94154d7f4c847,
+        type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612222214116454261, guid: 5fabbbdf8a75342408d94154d7f4c847,
+        type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
+    - target: {fileID: 5136953971191604729, guid: 5fabbbdf8a75342408d94154d7f4c847,
+        type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542139417759741421, guid: 5fabbbdf8a75342408d94154d7f4c847,
+        type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6957666009019257614, guid: 5fabbbdf8a75342408d94154d7f4c847,
+        type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880405789051711309, guid: 5fabbbdf8a75342408d94154d7f4c847,
+        type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933228998916797641, guid: 5fabbbdf8a75342408d94154d7f4c847,
+        type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018583869735119804, guid: 5fabbbdf8a75342408d94154d7f4c847,
+        type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fabbbdf8a75342408d94154d7f4c847, type: 3}

@@ -9,6 +9,7 @@ public class CameraControl : MonoBehaviour
     //this will be forward not relative to the camera, but to the map
     Vector3 forward;
     Vector3 up;
+    float speed;
 
     Vector3 camLocalEuler;
 
@@ -19,6 +20,7 @@ public class CameraControl : MonoBehaviour
         //gameObject.transform.position
         forward = Quaternion.Euler(-30, 0, 0) * gameObject.transform.forward;
         up = Quaternion.Euler(0, 0, 90) * forward;
+        speed = .5f;
     }
 
     // Update is called once per frame
@@ -33,32 +35,32 @@ public class CameraControl : MonoBehaviour
         //forward
         if (Input.GetKey(KeyCode.W))
         {
-            position += forward;
+            position += forward * speed;
         }
         //left
         if (Input.GetKey(KeyCode.A))
         {
-            position -= (Quaternion.Euler(0,90,0) * forward);
+            position -= (Quaternion.Euler(0,90,0) * forward) * speed;
         }
         //backwards
         if (Input.GetKey(KeyCode.S))
         {
-            position -= forward;
+            position -= forward * speed;
         }
         //right
         if (Input.GetKey(KeyCode.D))
         {
-            position += (Quaternion.Euler(0, 90, 0) * forward);
+            position += (Quaternion.Euler(0, 90, 0) * forward) * speed;
         }
         //Up
         if (Input.GetKey(KeyCode.Equals))
         {
-            position += (Quaternion.Euler(-90, 0, 0) * forward);
+            position += Vector3.up * speed;
         }
         //Down
         if (Input.GetKey(KeyCode.Minus))
         {
-            position -= (Quaternion.Euler(-90, 0, 0) * forward);
+            position -= Vector3.up * speed;
         }
         gameObject.transform.position = position;
     }

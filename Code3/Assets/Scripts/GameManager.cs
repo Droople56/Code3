@@ -30,18 +30,21 @@ public class GameManager : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, 1000.0f))
             {
-                if (hit.transform.gameObject.GetComponent<TerrainCollider>() != null)
+                if (hit.transform.gameObject.tag == "Ground")
                 {
-
-                   
-                   
                     Vector3 dest = new Vector3(hit.point.x, selectedObject.transform.position.y, hit.point.z);
                     selectedObject.transform.GetComponent<PlayerUnit>().MoveUnit(dest);
 
                 }
+                else if (hit.transform.gameObject.tag == "Vehicle")
+                {
+                    selectedObject.transform.GetComponent<PlayerUnit>().InteractWithVehicle(hit.transform.gameObject);
+                }
                 else
                 {
                     Debug.Log("INVALID LOCATION");
+                    Debug.Log(hit.transform.gameObject.name);
+                    Debug.Log(hit.transform.gameObject.tag);
                 }
             }
         }

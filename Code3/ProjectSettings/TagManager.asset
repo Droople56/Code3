@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Unit
+  - Vehicle
+  - Fire
+  - Ground
   layers:
   - Default
   - TransparentFX
