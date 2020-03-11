@@ -8,6 +8,9 @@ public class FireManager : MonoBehaviour
     [SerializeField]
     private float instantiationTimer = 1f;
     private float radius = 1f;
+    private int retryCount = 0;
+    [SerializeField]
+    private int maxRetries = 20;
 
     [SerializeField]
     private GameObject firePrefab;
@@ -15,6 +18,8 @@ public class FireManager : MonoBehaviour
 
     [SerializeField]
     private LayerMask fireLayer;
+
+    private bool spreadFire = false;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +31,10 @@ public class FireManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CreateFire();
+        if (spreadFire)
+        {
+            CreateFire();
+        }
     }
 
     /// <summary>
@@ -36,6 +44,7 @@ public class FireManager : MonoBehaviour
     {
         var newFire = Instantiate(firePrefab, this.transform.position, Quaternion.identity);
         fires.Add(newFire);
+        spreadFire = true;
     }
 
     /// <summary>
@@ -69,7 +78,19 @@ public class FireManager : MonoBehaviour
 
         if(Physics.OverlapSphere(randomPosition, .25f, fireLayer).Length > 0)
         {
+            if(retryCount > maxRetries)
+            {
+                spreadFire = false;
+                return new Vector3(-10000, -10000, -10000);
+            }
+
+            retryCount++;
+            Debug.Log(retryCount);
             return CalculateRandomPosition();
+        }
+        else
+        {
+            retryCount = 0;
         }
 
         return randomPosition;
