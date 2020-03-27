@@ -17,7 +17,8 @@ public class PlayerUnit : MonoBehaviour
     Vector3 forward;
     int health;
     float speed;
-    List<GameObject> inventory;
+    //List<GameObject> inventory;
+    GameObject heldItem;
 
     private NavMeshAgent agent;
 
@@ -56,5 +57,10 @@ public class PlayerUnit : MonoBehaviour
 
     }
 
-
+    public void PickupItem(GameObject item)
+    {
+        Debug.Log(item + " picked up");
+        heldItem = item;
+        item.transform.SetParent(this.transform);
+    }
 }

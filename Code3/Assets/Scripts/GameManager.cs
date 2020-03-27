@@ -40,6 +40,11 @@ public class GameManager : MonoBehaviour
                 {
                     selectedObject.transform.GetComponent<PlayerUnit>().InteractWithVehicle(hit.transform.gameObject);
                 }
+                else if(hit.transform.gameObject.tag == "Item")
+                {
+                    Vector3 dest = new Vector3(hit.point.x, selectedObject.transform.position.y, hit.point.z);
+                    selectedObject.transform.GetComponent<PlayerUnit>().PickupItem(hit.transform.gameObject);
+                }
                 else
                 {
                     Debug.Log("INVALID LOCATION");
