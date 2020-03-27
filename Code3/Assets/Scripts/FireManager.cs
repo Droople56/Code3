@@ -7,7 +7,7 @@ public class FireManager : MonoBehaviour
 {
     [SerializeField]
     private float instantiationTimer = 1f;
-    private float radius = 1f;
+    private float radius = 2f;
     private int retryCount = 0;
     [SerializeField]
     private int maxRetries = 20;
