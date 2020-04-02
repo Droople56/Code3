@@ -196,7 +196,6 @@ GameObject:
   - component: {fileID: 4656294452733348182}
   - component: {fileID: 4656294452733348183}
   - component: {fileID: -4495275674799636778}
-  - component: {fileID: 4551075135300105906}
   - component: {fileID: 3717294771365090057}
   m_Layer: 0
   m_Name: Firefighter
@@ -245,18 +244,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdcdbf4618bd40c479842698c3e3ec64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4551075135300105906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4656294452733348180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cffdc81f03818b41b9e91d12890a16b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!195 &3717294771365090057

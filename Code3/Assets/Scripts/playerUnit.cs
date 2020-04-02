@@ -53,7 +53,7 @@ public class PlayerUnit : MonoBehaviour
 
     public void InteractWithVehicle(GameObject vehicle)
     {
-        Debug.Log("Interact with " + vehicle.name);
+        Debug.Log("Interact with " + vehicle.transform.parent.name);
 
     }
 
@@ -61,6 +61,17 @@ public class PlayerUnit : MonoBehaviour
     {
         Debug.Log(item + " picked up");
         heldItem = item;
-        item.transform.SetParent(this.transform);
+        item.transform.root.position = transform.position + Vector3.Normalize(transform.right);
+        item.transform.root.rotation = transform.rotation;
+        item.transform.root.SetParent(this.transform);
+    }
+
+    public float GetDistance(GameObject item)
+    {
+        float distance = 0.0f;
+
+        distance = Vector3.Distance(transform.position,item.transform.position);
+
+        return distance;
     }
 }

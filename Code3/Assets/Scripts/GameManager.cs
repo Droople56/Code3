@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             GetObjectClicked();
-            Debug.Log("Click");
+            Debug.Log("Click" + transform.name);
         }
         if (Input.GetMouseButtonDown(1) && selectedObject != null)
         {
@@ -36,15 +36,18 @@ public class GameManager : MonoBehaviour
                     selectedObject.transform.GetComponent<PlayerUnit>().MoveUnit(dest);
 
                 }
-                else if (hit.transform.gameObject.tag == "Vehicle")
+                else if (hit.transform.parent.tag == "Vehicle")
                 {
                     selectedObject.transform.GetComponent<PlayerUnit>().InteractWithVehicle(hit.transform.gameObject);
                 }
-                else if(hit.transform.gameObject.tag == "Item")
+                else if(hit.transform.parent.tag == "Item")
                 {
                     Vector3 dest = new Vector3(hit.point.x, selectedObject.transform.position.y, hit.point.z);
                     selectedObject.transform.GetComponent<PlayerUnit>().MoveUnit(dest);
-                    selectedObject.transform.GetComponent<PlayerUnit>().PickupItem(hit.transform.gameObject);
+                    if (selectedObject.transform.GetComponent<PlayerUnit>().GetDistance(hit.transform.gameObject) < 3.0f)
+                    {
+                        selectedObject.transform.GetComponent<PlayerUnit>().PickupItem(hit.transform.gameObject);
+                    }
                 }
                 else
                 {
