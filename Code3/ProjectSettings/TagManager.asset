@@ -10,6 +10,8 @@ TagManager:
   - Ground
   - Item
   - House
+  - Injured
+  - Criminal
   layers:
   - Default
   - TransparentFX

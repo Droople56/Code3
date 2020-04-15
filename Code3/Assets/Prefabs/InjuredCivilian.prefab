@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 8591019986753563539}
   m_Layer: 0
   m_Name: InjuredCivilian
-  m_TagString: Untagged
+  m_TagString: Injured
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

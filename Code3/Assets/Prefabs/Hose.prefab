@@ -381,6 +381,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4081115401073461936}
+  - component: {fileID: 5165464867065884144}
   m_Layer: 0
   m_Name: Hose
   m_TagString: Item
@@ -409,6 +410,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5165464867065884144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4573963666926993636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1d5055b671bd848ba5b137c0b28b82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 3002
 --- !u!1 &4855543193417771595
 GameObject:
   m_ObjectHideFlags: 0

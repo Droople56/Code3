@@ -19,6 +19,7 @@ public class PlayerUnit : MonoBehaviour
     float speed;
     //List<GameObject> inventory;
     GameObject heldItem;
+    int heldItemID;
 
     private NavMeshAgent agent;
 
@@ -26,6 +27,7 @@ public class PlayerUnit : MonoBehaviour
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        heldItemID = -1;
     }
 
     // Start is called before the first frame update
@@ -57,10 +59,57 @@ public class PlayerUnit : MonoBehaviour
 
     }
 
+    public void InteractWithSituation(GameObject situation)
+    {
+        Debug.Log("Interact with " + situation.transform.root.name);
+        if (situation.transform.tag == "Fire")
+        {
+            FireManager fm = situation.GetComponent<FireManager>();
+            if (heldItemID == 3001) //Extinguisher
+            {
+                fm.StopFireSpread();
+                Debug.Log("STOPPING SPREAD");
+            }
+
+            if (heldItemID == 3002) //Hose
+            {
+                fm.PutOutFire();
+                Debug.Log("PUTTING OUT FIRE");
+            }
+
+            if (heldItemID == 3003) //Jaws o' life
+            {
+
+            }
+        }
+        else if (situation.transform.tag == "Injured")
+        {
+            if (heldItemID == 1001) //Medkit
+            {
+
+            }
+
+            if (heldItemID == 1002) //Defibulator
+            {
+
+            }
+        }
+        else if (situation.transform.tag == "Criminal")
+        {
+            if (heldItemID == 2001) //Baton
+            {
+
+            }
+
+        }
+    }
+
+
     public void PickupItem(GameObject item)
     {
         Debug.Log(item + " picked up");
         heldItem = item;
+        heldItemID = item.transform.root.gameObject.GetComponent<ItemIdentifier>().ID;
         item.transform.root.position = transform.position + Vector3.Normalize(transform.right);
         item.transform.root.rotation = transform.rotation;
         item.transform.root.SetParent(this.transform);

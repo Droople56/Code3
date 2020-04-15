@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 730138301160768767}
   m_Layer: 0
   m_Name: Criminal
-  m_TagString: Unit
+  m_TagString: Criminal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -63,6 +63,36 @@ public class FireManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Used if the firefighter leaves a fire after attending to it
+    /// </summary>
+    public void ResumeFire()
+    {
+        spreadFire = true;
+    }
+
+    /// <summary>
+    /// used when a firefighter is interacting with a fire with an extinguisher
+    /// </summary>
+    public void StopFireSpread()
+    {
+        spreadFire = false;
+    }
+
+
+    /// <summary>
+    /// Used when a firefighter is interacting with a fire with a hose
+    /// </summary>
+    public void PutOutFire()
+    {
+        spreadFire = false;
+        GameObject lastFire = fires[fires.Count];
+        fires.Remove(lastFire);
+        Destroy(lastFire);
+
+
+    }
+
+    /// <summary>
     /// Calculates a random position for a new fire prefab. 
     /// Looks for a random position around the last spawned fire prefab.
     /// </summary>
