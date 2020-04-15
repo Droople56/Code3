@@ -24,7 +24,7 @@ public class ItemIdentifier : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ID = -1;
+        
     }
 
     public void SetItemID(int num)
@@ -35,11 +35,6 @@ public class ItemIdentifier : MonoBehaviour
 
     public int GetID()
     {
-        if (ID == -1)
-        {
-            throw new System.Exception("Item ID not defined.");
-        }
-
         return ID;
     }
 

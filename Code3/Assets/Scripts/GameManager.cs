@@ -36,6 +36,15 @@ public class GameManager : MonoBehaviour
                     selectedObject.transform.GetComponent<PlayerUnit>().MoveUnit(dest);
 
                 }
+                else if (hit.transform.tag == "Fire" || hit.transform.tag == "Injured" || hit.transform.tag == "Criminal")
+                {
+                    Vector3 dest = new Vector3(hit.point.x, selectedObject.transform.position.y, hit.point.z);
+                    selectedObject.transform.GetComponent<PlayerUnit>().MoveUnit(dest);
+                    if (selectedObject.transform.GetComponent<PlayerUnit>().GetDistance(hit.transform.gameObject) < 3.0f)
+                    {
+                        selectedObject.transform.GetComponent<PlayerUnit>().InteractWithSituation(hit.transform.gameObject);
+                    }
+                }
                 else if (hit.transform.parent.tag == "Vehicle")
                 {
                     selectedObject.transform.GetComponent<PlayerUnit>().InteractWithVehicle(hit.transform.gameObject);
@@ -47,15 +56,6 @@ public class GameManager : MonoBehaviour
                     if (selectedObject.transform.GetComponent<PlayerUnit>().GetDistance(hit.transform.gameObject) < 3.0f)
                     {
                         selectedObject.transform.GetComponent<PlayerUnit>().PickupItem(hit.transform.gameObject);
-                    }
-                }
-                else if (hit.transform.parent.tag == "Fire" || hit.transform.parent.tag == "Injured" || hit.transform.parent.tag == "Criminal")
-                {
-                    Vector3 dest = new Vector3(hit.point.x, selectedObject.transform.position.y, hit.point.z);
-                    selectedObject.transform.GetComponent<PlayerUnit>().MoveUnit(dest);
-                    if (selectedObject.transform.GetComponent<PlayerUnit>().GetDistance(hit.transform.gameObject) < 3.0f)
-                    {
-                        selectedObject.transform.GetComponent<PlayerUnit>().InteractWithSituation(hit.transform.gameObject);
                     }
                 }
                 else

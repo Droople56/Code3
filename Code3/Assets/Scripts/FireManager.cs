@@ -21,6 +21,8 @@ public class FireManager : MonoBehaviour
 
     private bool spreadFire = false;
 
+    private bool putOutFire = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,12 @@ public class FireManager : MonoBehaviour
         if (spreadFire)
         {
             CreateFire();
+        }
+
+        if (putOutFire)
+        {
+            spreadFire = false;
+            PutOutFire();
         }
     }
 
@@ -78,17 +86,29 @@ public class FireManager : MonoBehaviour
         spreadFire = false;
     }
 
+    public void SetPutOutFire(bool b)
+    {
+        putOutFire = b;
+    }
 
     /// <summary>
     /// Used when a firefighter is interacting with a fire with a hose
     /// </summary>
     public void PutOutFire()
     {
-        spreadFire = false;
-        GameObject lastFire = fires[fires.Count];
-        fires.Remove(lastFire);
-        Destroy(lastFire);
-
+        if (fires.Count == 0)
+        {
+            putOutFire = false;
+            return;
+        }
+        instantiationTimer -= Time.deltaTime;
+        if (instantiationTimer <= 0)
+        {
+            GameObject lastFire = fires[fires.Count - 1];
+            fires.Remove(lastFire);
+            Destroy(lastFire);
+            instantiationTimer = 2f;
+        }
 
     }
 

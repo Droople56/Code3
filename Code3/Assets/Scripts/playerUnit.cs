@@ -64,7 +64,8 @@ public class PlayerUnit : MonoBehaviour
         Debug.Log("Interact with " + situation.transform.root.name);
         if (situation.transform.tag == "Fire")
         {
-            FireManager fm = situation.GetComponent<FireManager>();
+            FireManager fm = GameObject.Find("SpreadingFire").GetComponent<FireManager>();
+            Debug.Log(fm.name + heldItemID);
             if (heldItemID == 3001) //Extinguisher
             {
                 fm.StopFireSpread();
@@ -73,7 +74,7 @@ public class PlayerUnit : MonoBehaviour
 
             if (heldItemID == 3002) //Hose
             {
-                fm.PutOutFire();
+                fm.SetPutOutFire(true);
                 Debug.Log("PUTTING OUT FIRE");
             }
 
@@ -107,9 +108,9 @@ public class PlayerUnit : MonoBehaviour
 
     public void PickupItem(GameObject item)
     {
-        Debug.Log(item + " picked up");
-        heldItem = item;
         heldItemID = item.transform.root.gameObject.GetComponent<ItemIdentifier>().ID;
+        Debug.Log(item + " picked up" + heldItemID);
+        heldItem = item;
         item.transform.root.position = transform.position + Vector3.Normalize(transform.right);
         item.transform.root.rotation = transform.rotation;
         item.transform.root.SetParent(this.transform);
