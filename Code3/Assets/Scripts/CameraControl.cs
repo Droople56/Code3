@@ -55,12 +55,18 @@ public class CameraControl : MonoBehaviour
         //Up
         if (Input.GetKey(KeyCode.Equals))
         {
-            position += Vector3.up * speed;
+            if(position.y <= 50)
+            {
+                position += Vector3.up * speed;
+            }
         }
         //Down
         if (Input.GetKey(KeyCode.Minus))
         {
-            position -= Vector3.up * speed;
+            if (position.y >= 3.5)
+            {
+                position -= Vector3.up * speed;
+            }
         }
         gameObject.transform.position = position;
     }

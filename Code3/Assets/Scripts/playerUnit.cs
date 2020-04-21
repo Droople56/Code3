@@ -64,7 +64,8 @@ public class PlayerUnit : MonoBehaviour
         Debug.Log("Interact with " + situation.transform.root.name);
         if (situation.transform.tag == "Fire")
         {
-            FireManager fm = GameObject.Find("SpreadingFire").GetComponent<FireManager>();
+            Debug.Log(situation.transform.root);
+            FireManager fm = situation.transform.root.GetComponent<FireManager>();
             Debug.Log(fm.name + heldItemID);
             if (heldItemID == 3001) //Extinguisher
             {
@@ -85,14 +86,16 @@ public class PlayerUnit : MonoBehaviour
         }
         else if (situation.transform.tag == "Injured")
         {
+            InjuredCivilian ic = situation.GetComponent<InjuredCivilian>();
             if (heldItemID == 1001) //Medkit
             {
-
+                ic.Heal();
+                Debug.Log("Fixing up victim.");
             }
-
             if (heldItemID == 1002) //Defibulator
             {
-
+                ic.Revive();
+                Debug.Log("Clear!, Shocking!");
             }
         }
         else if (situation.transform.tag == "Criminal")

@@ -65,6 +65,7 @@ public class FireManager : MonoBehaviour
         {
             var position = CalculateRandomPosition();
             var fireObj = Instantiate(firePrefab, position, Quaternion.identity);
+            fireObj.transform.parent = gameObject.transform;
             instantiationTimer = 2f;
             fires.Add(fireObj);
         }

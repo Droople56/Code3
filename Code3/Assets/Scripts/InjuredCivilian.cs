@@ -7,12 +7,15 @@ public class InjuredCivilian : MonoBehaviour
     private int health;
     private float currentTime;
     private Renderer meshRenderer;
+    private bool isDying;
+    private bool isDead;
 
     [SerializeField]
     private float damageTimer = 6f;
 
     public Color defaultColor;
     public Color damagedColor;
+    public Color deadColor;
 
     [SerializeField]
     private int flashTimer = 2;
@@ -20,7 +23,8 @@ public class InjuredCivilian : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        health = 100;
+        health = 20;
+        isDying = true;
         meshRenderer = GetComponentInChildren<Renderer>();
     }
 
@@ -29,12 +33,16 @@ public class InjuredCivilian : MonoBehaviour
     {
         currentTime += Time.deltaTime;
 
-        if(currentTime >= damageTimer)
+        if(currentTime >= damageTimer && isDying)
         {
             StartCoroutine(FlashRed(flashTimer));
             TakeDamage(10);
 
             currentTime = 0;
+        }
+        if (isDead)
+        {
+            meshRenderer.material.color = deadColor;
         }
     }
 
@@ -49,6 +57,7 @@ public class InjuredCivilian : MonoBehaviour
         if (health <= 0)
         {
             Death();
+            
         }
     }
 
@@ -75,6 +84,39 @@ public class InjuredCivilian : MonoBehaviour
     void Death()
     {
         StopCoroutine(FlashRed(flashTimer));
-        Destroy(this.gameObject);
+        isDying = false;
+        isDead = true;
+        //Destroy(this.gameObject);
+    }
+
+    //For Defib
+    public void Revive()
+    {
+        if (isDead)
+        {
+            health = 50;
+            isDead = false;
+            isDying = true;
+        }
+        else
+        {
+            Debug.Log("Victim doesn't need a shock.");
+        }
+        
+    }
+
+    //For Medkit
+    public void Heal()
+    {
+        if (!isDead)
+        {
+            health = 100;
+            isDying = false;
+            gameObject.transform.Rotate(new Vector3(0, 0, -90));
+        }
+        else
+        {
+            Debug.Log("Victim needs defib.");
+        }
     }
 }

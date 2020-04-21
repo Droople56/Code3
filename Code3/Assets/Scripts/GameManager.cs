@@ -45,11 +45,11 @@ public class GameManager : MonoBehaviour
                         selectedObject.transform.GetComponent<PlayerUnit>().InteractWithSituation(hit.transform.gameObject);
                     }
                 }
-                else if (hit.transform.parent.tag == "Vehicle")
+                /*else if (hit.transform.parent.tag == "Vehicle")
                 {
                     selectedObject.transform.GetComponent<PlayerUnit>().InteractWithVehicle(hit.transform.gameObject);
-                }
-                else if(hit.transform.parent.tag == "Item")
+                }*/
+                else if(hit.transform.tag == "Item")
                 {
                     Vector3 dest = new Vector3(hit.point.x, selectedObject.transform.position.y, hit.point.z);
                     selectedObject.transform.GetComponent<PlayerUnit>().MoveUnit(dest);
