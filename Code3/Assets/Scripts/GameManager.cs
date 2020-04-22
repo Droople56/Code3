@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(1) && selectedObject != null)
         {
+            selectedObject.transform.GetComponent<PlayerUnit>().ResetAction();
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, 1000.0f))
@@ -62,7 +63,7 @@ public class GameManager : MonoBehaviour
                 {
                     Debug.Log("INVALID CONTEXT");
                     Debug.Log(hit.transform.gameObject.name);
-                    Debug.Log(hit.transform.gameObject.tag);
+                    Debug.Log(hit.transform.tag);
                 }
             }
         }

@@ -20,6 +20,7 @@ public class PlayerUnit : MonoBehaviour
     //List<GameObject> inventory;
     GameObject heldItem;
     int heldItemID;
+    GameObject interactionTarget;
 
     private NavMeshAgent agent;
 
@@ -66,6 +67,7 @@ public class PlayerUnit : MonoBehaviour
         {
             Debug.Log(situation.transform.root);
             FireManager fm = situation.transform.root.GetComponent<FireManager>();
+            interactionTarget = fm.gameObject;
             Debug.Log(fm.name + heldItemID);
             if (heldItemID == 3001) //Extinguisher
             {
@@ -87,6 +89,7 @@ public class PlayerUnit : MonoBehaviour
         else if (situation.transform.tag == "Injured")
         {
             InjuredCivilian ic = situation.GetComponent<InjuredCivilian>();
+            interactionTarget = ic.gameObject;
             if (heldItemID == 1001) //Medkit
             {
                 ic.Heal();
@@ -108,6 +111,21 @@ public class PlayerUnit : MonoBehaviour
         }
     }
 
+    public void ResetAction()
+    {
+        if (interactionTarget)
+        {
+            if (interactionTarget.transform.tag == "Fire")
+            {
+                interactionTarget.GetComponent<FireManager>().ResumeFire();
+                interactionTarget.GetComponent<FireManager>().SetPutOutFire(false);
+            }
+            if (interactionTarget.transform.tag == "Injured")
+            {
+
+            }
+        }
+    }
 
     public void PickupItem(GameObject item)
     {
