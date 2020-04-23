@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,12 +9,23 @@ public class GameManager : MonoBehaviour
     private GameObject selectedObject;
     [SerializeField]
     private GameObject prevSelectedObject;
+    GameObject HUD;
+    List<GameObject> paramedics;
+    List<GameObject> firefighters;
+    List<GameObject> policeOfficers;
+    public List<GameObject> playerUnits;
 
     // Start is called before the first frame update
     void Start()
     {
         selectedObject = null;
         prevSelectedObject = null;
+        HUD = GameObject.Find("HUD");
+        paramedics = new List<GameObject>();
+        firefighters = new List<GameObject>();
+        policeOfficers = new List<GameObject>();
+        playerUnits = new List<GameObject>();
+        GetPlayerUnits();
     }
 
     // Update is called once per frame
@@ -67,6 +79,7 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+        UpdateUI();
     }
 
 
@@ -94,8 +107,51 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void UpdateUI()
+    {
+        string updatedList = "UNITS \n";
+        foreach (var unit in playerUnits)
+        {
+            updatedList += " " + unit.transform.name + "\n";
+        }
+        HUD.transform.GetChild(0).gameObject.GetComponent<Text>().text = updatedList;
+    }
 
+    void GetParamedics()
+    {
+        GameObject medicList = GameObject.Find("Paramedics");
+        for (int i = 0; i < medicList.transform.childCount; i++)
+        {
+            paramedics.Add(medicList.transform.GetChild(i).gameObject);
+        }
+    }
 
+    void GetFireFighters()
+    {
+        GameObject fireList = GameObject.Find("Firefighters");
+        for (int i = 0; i < fireList.transform.childCount; i++)
+        {
+            firefighters.Add(fireList.transform.GetChild(i).gameObject);
+        }
+    }
 
+    void GetPoliceOfficers()
+    {
+        GameObject copList = GameObject.Find("Police");
+        for (int i = 0; i < copList.transform.childCount; i++)
+        {
+            policeOfficers.Add(copList.transform.GetChild(i).gameObject);
+        }
+    }
+
+    void GetPlayerUnits()
+    {
+        GetParamedics();
+        GetFireFighters();
+        GetPoliceOfficers();
+        playerUnits.AddRange(paramedics);
+        playerUnits.AddRange(firefighters);
+        playerUnits.AddRange(policeOfficers);
+    }
 
 }
