@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8709948447234437078}
   - component: {fileID: 8709948447234437079}
+  - component: {fileID: 4559573425307527714}
   m_Layer: 0
   m_Name: SpreadingFire
   m_TagString: Fire
@@ -44,8 +45,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instantiationTimer: 1
+  maxRetries: 20
   firePrefab: {fileID: 2677170463525571667, guid: 961b71d72c376244a8fe19fc10fe4ba8,
     type: 3}
   fireLayer:
     serializedVersion: 2
     m_Bits: 256
+--- !u!65 &4559573425307527714
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8709948447234437076}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 3.629826, z: 1}
+  m_Center: {x: 0, y: 1.314913, z: 0}

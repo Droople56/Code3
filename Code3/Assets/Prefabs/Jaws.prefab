@@ -656,6 +656,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4196461905718866237}
   - component: {fileID: 7244592591828417584}
+  - component: {fileID: 8725345737131495298}
   m_Layer: 0
   m_Name: Jaws
   m_TagString: Item
@@ -697,3 +698,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 3003
+--- !u!136 &8725345737131495298
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8997004420045613326}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.4
+  m_Height: 2
+  m_Direction: 2
+  m_Center: {x: 0, y: -0.35, z: 0.55}

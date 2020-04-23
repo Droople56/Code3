@@ -21,6 +21,7 @@ public class PlayerUnit : MonoBehaviour
     GameObject heldItem;
     int heldItemID;
     GameObject interactionTarget;
+    bool isRunning;
 
     private NavMeshAgent agent;
 
@@ -34,7 +35,8 @@ public class PlayerUnit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        speed = 3.5f;
+        isRunning = true;
     }
 
     // Update is called once per frame
@@ -44,6 +46,7 @@ public class PlayerUnit : MonoBehaviour
         {
             agent.isStopped = true;
         }
+        ApplySpeedModifier();
     }
 
 
@@ -144,5 +147,38 @@ public class PlayerUnit : MonoBehaviour
         distance = Vector3.Distance(transform.position,item.transform.position);
 
         return distance;
+    }
+
+    //I intend to take this project further after class, this will be used to modify speed based on running and caried object weight
+    void ApplySpeedModifier()
+    {
+        if (isRunning)
+        {
+            speed = 5;
+        }
+        else
+        {
+            speed = 3.5f;
+        }
+        switch (heldItemID)
+        {
+            case 1001: //Medkit
+                speed -= 0.5f;
+                break;
+            case 1002: //Defibrillator
+                speed -= 0.5f;
+                break;
+            //Police items go here
+            case 3001: //Extinguisher
+                speed -= 1;
+                break;
+            case 3002: //Hose
+                speed -= 1.5f;
+                break;
+            default:
+                break;
+        }
+
+        gameObject.GetComponent<NavMeshAgent>().speed = speed;
     }
 }

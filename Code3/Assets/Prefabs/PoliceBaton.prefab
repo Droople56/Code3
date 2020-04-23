@@ -103,6 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7926050110940412927}
   - component: {fileID: 3521210924142037437}
+  - component: {fileID: 6505896538053968208}
   m_Layer: 0
   m_Name: PoliceBaton
   m_TagString: Item
@@ -138,3 +139,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 2001
+--- !u!136 &6505896538053968208
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7331396874716629130}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.1
+  m_Height: 1
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
