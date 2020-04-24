@@ -1,0 +1,230 @@
+fileFormatVersion: 2
+guid: 119a100791dc5554da12404e3f99a2c6
+ModelImporter:
+  serializedVersion: 26
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cabin_MTRL
+    second: {fileID: 2100000, guid: e5546516013811e43b80e8adb4ad8835, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grill_MTRL
+    second: {fileID: 2100000, guid: 493f79afe1d951c439b6680a7ef0c01e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hubcap_MTRL
+    second: {fileID: 2100000, guid: 81e8ebfe5723aa3499cb9dd2b94fe672, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal_MTRL
+    second: {fileID: 2100000, guid: e1d828d6d137d2641b9f624d22a0282d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tire_MTRL
+    second: {fileID: 2100000, guid: 061e204604ed9ed4a99dcc0950c08db0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: backBumper_MTRL
+    second: {fileID: 2100000, guid: 7a9273dfcb23524498eac70c50b7b9ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: backdoor_MTRL
+    second: {fileID: 2100000, guid: 71fb6b9a8591b154e804e540b6bcf37c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bumper_MTRL
+    second: {fileID: 2100000, guid: 7f9542355b3ae2f4f9c68cb5419bf309, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: circularMirror_MTRL
+    second: {fileID: 2100000, guid: 49b851204d526084896401e5a560f1a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mainBody_MTRL
+    second: {fileID: 2100000, guid: 521f6e1b795ce1648ae25f18779d31d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rectangularMirror_MTRL
+    second: {fileID: 2100000, guid: 0c8d4cd6ce02d3a47b74cbd94e36f79c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sirenLights_MTRL
+    second: {fileID: 2100000, guid: 6f16284d8fe5af941b9fb50f85024395, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: windshield_MTRL
+    second: {fileID: 2100000, guid: 51b393beea106354392e1cc171e9dab1, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ambulance_Seperate_Untextured_Cabin_MTRL_BaseColor
+    second: {fileID: 2800000, guid: 52188ece4f4c01143b52eb15cef66828, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ambulance_Seperate_Untextured_Cabin_MTRL_Height
+    second: {fileID: 2800000, guid: 764abe10bda056f4b9d9c743c7d1384c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ambulance_Seperate_Untextured_Cabin_MTRL_Metallic
+    second: {fileID: 2800000, guid: aff6b52465fd7e948982292e6efc3f7b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ambulance_Seperate_Untextured_Cabin_MTRL_Roughness
+    second: {fileID: 2800000, guid: 8c772ff33a1735f42b4044def8b9eb4f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ambulance_Seperate_Untextured_Grill_MTRL_BaseColor
+    second: {fileID: 2800000, guid: 7f9b2db4e3b6a0b479d66241df462729, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ambulance_Seperate_Untextured_Grill_MTRL_Height
+    second: {fileID: 2800000, guid: cb84051ddbb04b54481cbfcf032f9635, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ambulance_Seperate_Untextured_Grill_MTRL_Metallic
+    second: {fileID: 2800000, guid: 439946ea485ed43499bf69ae95ce1c64, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ambulance_Seperate_Untextured_Grill_MTRL_Normal
+    second: {fileID: 2800000, guid: f97344bd2cb5301479345adf9f3375b1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ambulance_Seperate_Untextured_Grill_MTRL_Roughness
+    second: {fileID: 2800000, guid: 311753f0af4dadc4e873bae3b23ee6a5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ambulance_Seperate_Untextured_mainBody_MTRL_BaseColor
+    second: {fileID: 2800000, guid: 09f89b5f08d204847b9b27662d7d70f7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ambulance_Seperate_Untextured_mainBody_MTRL_Height
+    second: {fileID: 2800000, guid: f1ea4bb8ff60d9e459a61dc3d3e9d6d1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ambulance_Seperate_Untextured_mainBody_MTRL_Metallic
+    second: {fileID: 2800000, guid: ad8db0c1270b4b3459123e2c842db81b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ambulance_Seperate_Untextured_mainBody_MTRL_Normal
+    second: {fileID: 2800000, guid: d083cec815fe4024f98be349bdd146ad, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ambulance_Seperate_Untextured_mainBody_MTRL_Roughness
+    second: {fileID: 2800000, guid: d7d7c85b7eb7d8a4f8e1864724b73e45, type: 3}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.15
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.045719996
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
