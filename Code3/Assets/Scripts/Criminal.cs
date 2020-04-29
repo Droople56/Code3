@@ -19,7 +19,9 @@ public class Criminal : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         waypoints = new List<Transform>();
 
-        var vehicles = GameObject.FindGameObjectsWithTag("Vehicle").Where(x => x.gameObject.name.Contains("CivilianVehicle")).Select(x => x.transform).ToList();
+        var vehicles = GameObject.FindGameObjectsWithTag("Vehicle").Where(x => x.gameObject.name.Contains("CivilianVehicle") 
+                                                                            || x.gameObject.name.Contains("Tahoe_civilian_textured"))
+                                                                   .Select(x => x.transform).ToList();
         var houses = GameObject.FindGameObjectsWithTag("House").Select(x => x.transform).ToList();
 
         waypoints.AddRange(houses);
@@ -46,7 +48,9 @@ public class Criminal : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Check if he made it to the current waypoint
-        if(other.gameObject.name.Contains("CivilianVehicle") || other.gameObject.name.Contains("House")) 
+        if(other.gameObject.name.Contains("CivilianVehicle") 
+            || other.gameObject.name.Contains("House") 
+            || other.gameObject.name.Contains("Tahoe_civilian_textured")) 
         {
             if(waypoints[currentWaypointIndex].position == other.gameObject.transform.position)
             {
