@@ -12,6 +12,7 @@ TagManager:
   - House
   - Injured
   - Criminal
+  - DamagedVehicle
   layers:
   - Default
   - TransparentFX
