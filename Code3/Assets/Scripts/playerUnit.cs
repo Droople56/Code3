@@ -83,10 +83,14 @@ public class PlayerUnit : MonoBehaviour
                 fm.SetPutOutFire(true);
                 Debug.Log("PUTTING OUT FIRE");
             }
-
+        }
+        else if(situation.transform.tag == "DamagedVehicle")
+        {
+            DamagedVehicle dv = situation.transform.root.GetComponent<DamagedVehicle>();
             if (heldItemID == 3003) //Jaws o' life
             {
-
+                dv.RescueCivilian();
+                Debug.Log("RESCUING CIVILIAN");
             }
         }
         else if (situation.transform.tag == "Injured")

@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
                     selectedObject.transform.GetComponent<PlayerUnit>().MoveUnit(dest);
 
                 }
-                else if (hit.transform.tag == "Fire" || hit.transform.tag == "Injured" || hit.transform.tag == "Criminal")
+                else if (hit.transform.tag == "Fire" || hit.transform.tag == "Injured" || hit.transform.tag == "Criminal" || hit.transform.tag == "DamagedVehicle")
                 {
                     Vector3 dest = new Vector3(hit.point.x, selectedObject.transform.position.y, hit.point.z);
                     selectedObject.transform.GetComponent<PlayerUnit>().MoveUnit(dest);
