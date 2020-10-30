@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //Needs update to switch
+
         if (Input.GetMouseButtonDown(0))
         {
             GetObjectClicked();
@@ -43,39 +46,38 @@ public class GameManager : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, 1000.0f))
             {
-                if (hit.transform.gameObject.tag == "Ground")
+                Vector3 dest = new Vector3(hit.point.x, selectedObject.transform.position.y, hit.point.z);
+                switch (hit.transform.tag)
                 {
-                    Vector3 dest = new Vector3(hit.point.x, selectedObject.transform.position.y, hit.point.z);
-                    selectedObject.transform.GetComponent<PlayerUnit>().MoveUnit(dest);
-
-                }
-                else if (hit.transform.tag == "Fire" || hit.transform.tag == "Injured" || hit.transform.tag == "Criminal" || hit.transform.tag == "DamagedVehicle")
-                {
-                    Vector3 dest = new Vector3(hit.point.x, selectedObject.transform.position.y, hit.point.z);
-                    selectedObject.transform.GetComponent<PlayerUnit>().MoveUnit(dest);
-                    if (selectedObject.transform.GetComponent<PlayerUnit>().GetDistance(hit.transform.gameObject) < 3.0f)
-                    {
-                        selectedObject.transform.GetComponent<PlayerUnit>().InteractWithSituation(hit.transform.gameObject);
-                    }
-                }
-                /*else if (hit.transform.parent.tag == "Vehicle")
-                {
-                    selectedObject.transform.GetComponent<PlayerUnit>().InteractWithVehicle(hit.transform.gameObject);
-                }*/
-                else if(hit.transform.tag == "Item")
-                {
-                    Vector3 dest = new Vector3(hit.point.x, selectedObject.transform.position.y, hit.point.z);
-                    selectedObject.transform.GetComponent<PlayerUnit>().MoveUnit(dest);
-                    if (selectedObject.transform.GetComponent<PlayerUnit>().GetDistance(hit.transform.gameObject) < 3.0f)
-                    {
-                        selectedObject.transform.GetComponent<PlayerUnit>().PickupItem(hit.transform.gameObject);
-                    }
-                }
-                else
-                {
-                    Debug.Log("INVALID CONTEXT");
-                    Debug.Log(hit.transform.gameObject.name);
-                    Debug.Log(hit.transform.tag);
+                    case "Ground":
+                        
+                        selectedObject.transform.GetComponent<PlayerUnit>().MoveUnit(dest);
+                        break;
+                    case "Fire":
+                    case "Injured":
+                    case "Criminal":
+                    case "DamagedVehicle":
+                        
+                        selectedObject.transform.GetComponent<PlayerUnit>().MoveUnit(dest);
+                        if (selectedObject.transform.GetComponent<PlayerUnit>().GetDistance(hit.transform.gameObject) < 3.0f)
+                        {
+                            selectedObject.transform.GetComponent<PlayerUnit>().InteractWithSituation(hit.transform.gameObject);
+                        }
+                        break;
+                    //case "Vehicle":
+                    case "Item":
+                        
+                        selectedObject.transform.GetComponent<PlayerUnit>().MoveUnit(dest);
+                        if (selectedObject.transform.GetComponent<PlayerUnit>().GetDistance(hit.transform.gameObject) < 3.0f)
+                        {
+                            selectedObject.transform.GetComponent<PlayerUnit>().PickupItem(hit.transform.gameObject);
+                        }
+                        break;
+                    default:
+                        Debug.Log("INVALID CONTEXT");
+                        Debug.Log(hit.transform.gameObject.name);
+                        Debug.Log(hit.transform.tag);
+                        break;
                 }
             }
         }
